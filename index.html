@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rectangel</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000px" height="1000px"></canvas>
+<script>
+    class Rectangel {
+        constructor(width,height) {
+            this.width = width;
+            this.height = height;
+        }
+        area(){
+            return 2*(this.width + this.height);
+        }
+        square(){
+            return this.width * this.height;
+        }
+        drawRect(){
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.rect(20, 20, this.width, this.height);
+            ctx.stroke();
+        }
+    }
+    let rectangel = new Rectangel(100,200);
+    rectangel.drawRect();
+    rectangel.width = 50;
+    rectangel.height = 100;
+    rectangel.drawRect();
+    document.write(rectangel.area());
+    document.write(rectangel.square());
+</script>
+</body>
+</html>
